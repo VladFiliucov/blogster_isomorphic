@@ -11,17 +11,14 @@ class BlogList extends Component {
 
   render() {
     const { blogEntries } = this.props
-    console.log(blogEntries);
 
     return (
       <div>
         {
           blogEntries.map(blogEntry => {
-            return <BlogItem
-              imageURL={blogEntry.image}
-              style={style}
-              altText={blogEntry.altText}
-              text={blogEntry.text} />
+            const {id, image, altText, text} = blogEntry
+
+            return <BlogItem key={id} imageURL={image} style={style} altText={altText} text={text} />
           })
         }
       </div>
