@@ -1,10 +1,34 @@
+import express from 'express';
+
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import ReactDOM from 'react-dom/server';
 
 import BlogList from './components/containers/BlogList';
 
-const result = ReactDOMServer.renderToString(
-  React.createElement(BlogList)
+const app = express();
+
+const markup = (
+  <div>
+    <BlogList />
+  </div>
 );
 
-console.log(result);
+app.use((req, res) => {
+  const html = ReactDOM.renderToString(markup);
+
+  res.end(`
+    <!DOCTYPE html>
+    <html>
+    <head></head>
+    <body>
+      ${html}
+    </body>
+    </html>
+  `)
+});
+
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`SERVER LISTENING TO PORT ${PORT}`);
+});
