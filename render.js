@@ -3,13 +3,13 @@ import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 
-import BlogList from './components/containers/BlogList';
+import BlogPage from './components/containers/BlogPage';
 
 const app = express();
 
 const markup = (
   <div>
-    <BlogList />
+    <BlogPage />
   </div>
 );
 
