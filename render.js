@@ -13,6 +13,7 @@ const markup = (
   </div>
 );
 
+app.use(express.static('public'));
 app.use((req, res) => {
   const html = ReactDOM.renderToString(markup);
 

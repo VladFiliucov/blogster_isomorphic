@@ -15,9 +15,9 @@ class BlogList extends React.Component {
   render() {
     return (
       <div>
-        <BlogItem imageURL={imageURL} style={style} altText={altText} text={text} />
-        <BlogItem imageURL={imageURL} style={style} altText={altText} text={text} />
-        <BlogItem imageURL={imageURL} style={style} altText={altText} text={text} />
+        <BlogItem imageURL={"pictures/picture1.jpg"} style={style} altText={altText} text={text} />
+        <BlogItem imageURL={"pictures/picture2.jpg"} style={style} altText={altText} text={text} />
+        <BlogItem imageURL={"pictures/picture3.jpg"} style={style} altText={altText} text={text} />
       </div>
     );
   }
