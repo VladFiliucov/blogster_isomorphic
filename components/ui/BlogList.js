@@ -16,9 +16,8 @@ class BlogList extends Component {
       <div>
         {
           blogEntries.map(blogEntry => {
-            const {id, image, altText, text} = blogEntry
 
-            return <BlogItem key={id} imageURL={image} style={style} altText={altText} text={text} />
+            return <BlogItem key={blogEntry.id} blogEntry={blogEntry} style={style} />
           })
         }
       </div>
